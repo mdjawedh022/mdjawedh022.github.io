@@ -12,6 +12,7 @@ import {
   useDisclosure,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import resume from "../Data/Md-Jawed-Hussain_Resume.pdf";
 
 import { AiOutlineHome, AiOutlineArrowDown } from "react-icons/ai";
 import { Link } from "react-scroll";
@@ -25,7 +26,7 @@ function SideDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleclick = () => {
     window.open(
-      "https://drive.google.com/file/d/1m5GgisAbX7FWCvIzTYzc-8tLL-hUtOYO/view?usp=share_link"
+      "https://drive.google.com/file/d/1PMo3FrhjjP51Cz8TH0XIy1fa093xtjFa/view?usp=sharing"
     );
   };
 
@@ -130,7 +131,7 @@ function SideDrawer() {
               </Box>
             </Link>
             <hr />
-            <a href={""} download>
+            <a href={resume} download>
               
               {/* //Resume */}
               <Box

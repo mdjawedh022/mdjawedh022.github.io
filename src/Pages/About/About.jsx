@@ -5,10 +5,17 @@ const About = () => {
   return (
     <>
       <Box
-      id="about" className="about section"
-      name='about'  
-      pt={{base:'70px',md:"70px",lg:"100px"}}>
-      <Text fontSize={{ base: "30px", md: "30px", lg: "50px" }} fontWeight={'500'}>About Me</Text>
+        id="about"
+        className="about section"
+        name="about"
+        pt={{ base: "70px", md: "70px", lg: "100px" }}
+      >
+        <Text
+          fontSize={{ base: "30px", md: "30px", lg: "50px" }}
+          fontWeight={"500"}
+        >
+          About Me
+        </Text>
         <Box
           w={{ base: "90%", md: "90%", lg: "75%" }}
           m={{ base: "20px auto", md: " 20px auto", lg: "20px auto" }}
@@ -21,7 +28,6 @@ const About = () => {
           }}
           // alignItems={'center'}
         >
-          
           <Box>
             <Image
               src={
@@ -30,16 +36,22 @@ const About = () => {
               borderRadius={"20px"}
             />
           </Box>
-          <Box >
+          <Box>
             {" "}
-            <Text textAlign={'justify'} fontSize={{ base: "15px", md: "20px", lg: "23px" }}   id="user-detail-intro">
-              I am a creative, observing, analytical, and aspiring FULL-STACK
-              Web Developer from Masai School specializing in MERN stack. Having
-              the technical skills in HTML, CSS, javascript, react js, node js,
-              and mogo database, I have cloned several websites during my course
-              duration here at Masai school.and computer science drag me to
-              become a full-stack web developer. I have cloned Tanshiq and
-              J.Crew, and wishKart. Here I was also groomed with soft skills.
+            <Text
+              textAlign={"justify"}
+              fontSize={{ base: "15px", md: "20px", lg: "23px" }}
+              id="user-detail-intro"
+            >
+              As a dedicated Web Developer specializing in the MERN Stack, I
+              bring proficiency in HTML, CSS, React.js, Node.js, Express.js, and
+              MongoDB. My academic background, coupled with hands-on experience,
+              empowers me to design and implement robust full-stack
+              applications. Eager to embark on my professional journey, I am
+              driven by a passion for crafting efficient and user-friendly
+              solutions. Committed to continuous learning and adaptability, I am
+              poised to contribute fresh perspectives and tackle new challenges,
+              making a positive impact in the dynamic field of web development.
             </Text>
           </Box>
         </Box>

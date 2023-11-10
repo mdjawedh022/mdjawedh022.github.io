@@ -9,7 +9,7 @@ import resume from "../../Data/Md-Jawed-Hussain_Resume.pdf";
 const Home = () => {
   const handleclick = () => {
     window.open(
-      "https://drive.google.com/file/d/1I2fdc7cMx8L-cPzQp9ThzusDJWUNjvcm/view?usp=share_link"
+      "https://drive.google.com/file/d/1PMo3FrhjjP51Cz8TH0XIy1fa093xtjFa/view?usp=sharing"
     );
   };
   return (
@@ -47,7 +47,7 @@ const Home = () => {
             color={useColorModeValue("white")}
             fontSize={{ base: "14px", md: "20px", lg: "22px" }}
           >
-            I enjoy coding and devloping user centeric web aplication!
+            I enjoy coding and devloping user centeric web application!
           </Text>
           <Text
             color={useColorModeValue("white")}

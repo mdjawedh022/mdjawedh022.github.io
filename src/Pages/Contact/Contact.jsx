@@ -13,29 +13,27 @@ import {
   Tooltip,
   Link,
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
-import {
-  MdPhone,
-  MdEmail,
-  // MdLocationOn,
-  // MdOutlineEmail,
-} from "react-icons/md";
+import { MdPhone, MdEmail } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
   const { hasCopied, onCopy } = useClipboard("jawedhilmand022@gmail.com");
-  const { hasCopy, onCopyMo } = useClipboard("8271766683");
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-
-  // const handleSubmit = () => {
-  //   console.log(name, email, message);
-  //   setEmail("");
-  //   setMessage("");
-  //   setName("");
-  // };
-
+  const { hasCopy, onCopyMo } = useClipboard("+91 827176683");
+  const [state, handleSubmit, ResetFunction] = useForm("mzbqrgzo");
+  const toast = useToast();
+  if (state.succeeded) {
+    toast({
+      title: "Message Send Sucessfully",
+      description: "Your message has been sent successfully",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
+    ResetFunction();
+  }
   return (
     <>
       <Box
@@ -56,6 +54,7 @@ const Contact = () => {
           Get in Touch Contact me
         </Text>
         <Box
+          // eslint-disable-next-line react-hooks/rules-of-hooks
           bg={useColorModeValue("gray.100", "blue.800")}
           borderRadius={"10px"}
           p={"20px"}
@@ -80,7 +79,7 @@ const Contact = () => {
             <Stack>
               <Link
                 id="contact-github"
-                href="https://github.com/mdjawedh022/"
+                href="https://github.com/mdjawedh022"
                 target={"blank"}
               >
                 <IconButton fontSize="3xl" icon={<BsGithub />} isRound />
@@ -93,8 +92,6 @@ const Contact = () => {
               >
                 <IconButton fontSize="2xl" icon={<BsLinkedin />} isRound />
               </Link>
-              {/* <p label="jawedhilmand022@gmail.com" id="contact-email"></p>
-   <p label="8271766683" id="contact-phone"></p>   */}
 
               <Text id="contact-email" label="jawedhilmand022@gmail.com">
                 {" "}
@@ -104,7 +101,6 @@ const Contact = () => {
                   hasArrow
                 >
                   <IconButton
-                    //  id="contact-email"
                     fontSize="3xl"
                     icon={<MdEmail />}
                     onClick={onCopy}
@@ -112,8 +108,7 @@ const Contact = () => {
                   />
                 </Tooltip>
               </Text>
-              <Text id="contact-phone" label="8271766683">
-                
+              <Text id="contact-phone" label="+91 8271766683">
                 <Tooltip
                   label={hasCopy ? "Mobile no Copied!" : "+91 8271766683"}
                   closeOnClick={false}
@@ -129,7 +124,7 @@ const Contact = () => {
                 </Tooltip>
               </Text>
             </Stack>
-            <form action="https://formspree.io/f/mzbqrgzo" method="POST">
+            <form onSubmit={handleSubmit}>
               <Stack
                 spacing={3}
                 w={{ base: "100%", md: "95%", lg: "125%" }}
@@ -143,36 +138,46 @@ const Contact = () => {
                   placeholder="Name.."
                   borderColor={"gray.800"}
                   type="text"
-                  value={name}
                   name="name"
+                  id="name"
                   _hover={{ border: "1px solid blue.500" }}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
+                />
+                <ValidationError
+                  prefix="Name"
+                  field="name"
+                  errors={state.errors}
                 />
                 <Input
                   _hover={{ border: "1px solid blue.500" }}
                   placeholder="Email.."
-                  value={email}
                   type="email"
                   name="email"
                   borderColor={"gray.800"}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  id="email"
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
                 />
                 <Textarea
                   _hover={{ border: "1px solid blue.500" }}
                   placeholder="Messages.."
                   height={"120px"}
                   border={"1px solid black"}
-                  value={message}
                   name="message"
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
+                  id="message"
                 />
-                <Button type="submit" border={"1px solid black"}>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
+                <Button
+                  type="submit"
+                  border={"1px solid black"}
+                  disabled={state.submitting}
+                >
                   Submit
                 </Button>
               </Stack>
@@ -185,4 +190,3 @@ const Contact = () => {
 };
 
 export default Contact;
-// color={useColorModeValue('black',"black")}

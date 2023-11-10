@@ -10,7 +10,7 @@ import SideDrawer from "./SideDrawer";
 const Navbar = () => {
   const handleclick = () => {
     window.open(
-      "https://drive.google.com/file/d/1I2fdc7cMx8L-cPzQp9ThzusDJWUNjvcm/view?usp=share_link"
+      "https://drive.google.com/file/d/1PMo3FrhjjP51Cz8TH0XIy1fa093xtjFa/view?usp=sharing"
     );
   };
 

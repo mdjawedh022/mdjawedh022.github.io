@@ -1,5 +1,5 @@
 import React from "react";
-import {Box,Text,Image} from "@chakra-ui/react";
+import {Box,Text,Image,useColorModeValue} from "@chakra-ui/react";
 import GitHubCalendar from 'react-github-calendar';
 // import './Github.css'
 
@@ -37,7 +37,15 @@ const Github = () => {
       alt=""
     />  
     <Box m={{base:'20px auto',md:'30px auto',lg:'50px auto'}} w={{base:'95%',md:'80%',lg:'80%'}}>
-    <GitHubCalendar className="react-activity-calendar" username="mdjawedh022" />
+    <GitHubCalendar
+     fontSize={14}
+    //  color="#4169el"
+     blockRadius={1}
+     blockMargin={6}
+     blockSize={16}
+     color={useColorModeValue("#4169el", "blue")}
+     showWeekdayLabels
+    className="react-activity-calendar" username="mdjawedh022" />
     </Box>
     </Box>
    </Box>

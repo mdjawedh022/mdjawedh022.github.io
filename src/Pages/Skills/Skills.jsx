@@ -28,13 +28,14 @@ const Skills = () => {
           pauseOnClick={true}
           delay={0}
           play={true}
-          direction="right"
+          direction="left"
         >
           <Box
             display={"flex"}
             height={"160px"}
             gap={"20px"}
             cursor={"pointer"}
+            flexDirection={'row'}
             // bg={useColorModeValue('white',"")}
             m={{ base: "10px", md: "10px", lg: "19px" }}
           >
@@ -228,7 +229,7 @@ const Skills = () => {
         pauseOnClick={true}
         delay={0}
         play={true}
-        direction="right"
+        direction="left"
       >
         <Box
           display={"flex"}
