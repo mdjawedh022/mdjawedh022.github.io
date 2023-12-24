@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./contact.css";
 import {
   Box,
@@ -51,7 +51,7 @@ const Contact = () => {
           fontSize={{ base: "30px", md: "30px", lg: "50px" }}
           mb={"15px"}
         >
-          Get in Touch Contact me
+          Feel free to reach out to me
         </Text>
         <Box
           // eslint-disable-next-line react-hooks/rules-of-hooks

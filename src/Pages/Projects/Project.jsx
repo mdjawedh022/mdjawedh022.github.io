@@ -14,7 +14,7 @@ import {TbBrandJavascript} from "react-icons/tb"
 import {SiChakraui, SiRedux,SiMongodb,SiExpress} from "react-icons/si"
 import {FaCss3Alt, FaNodeJs, FaReact} from "react-icons/fa"
 import img from "../../images/1.png";
-import img1 from "../../images/2.png";
+import img1 from "../../images/kfc.png";
 import img4 from "../../images/amazon.png"
 import img3 from "../../images/wishkart-photo.png"
 import "./project.css";
@@ -48,6 +48,74 @@ const Project = () => {
           }}
           gap={"20px"}
         >
+          <Box
+            className="project-card"
+            bg={useColorModeValue("blue.800", "blue.800")}
+            boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
+            p={"10px"}
+            borderRadius={"10px"}
+          >
+            <Image borderRadius={"10px"} src={img1} alt="pro1" />
+            <Text
+              className="project-title"
+              color={useColorModeValue("white", "")}
+              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
+            >
+              KFC
+            </Text>
+            <Text
+              color={useColorModeValue("white", "")}
+              className="project-description"
+            >
+              KFC (Kentucky Fried Chicken) is an American fast food resturant
+              chain headquartered in Louisville,Kentucky, that specializes in
+              fried chicken.
+            </Text>
+            <hr />
+            <Text
+              color={useColorModeValue("white", "")}
+              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
+            >
+              Tech Stack
+            </Text>
+            <Center>
+              <Box
+                className="project-tech-stack"
+                display={"flex"}
+                alignItems={"center"}
+                gap={"5px"}
+                mb={"5px"}
+                fontSize={"30px"}
+              >
+                <FaReact color="white" />
+                <FaCss3Alt color="white" /> <SiChakraui color="white" />{" "}
+              </Box>
+            </Center>
+            <hr />
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"space-around"}
+              mt={"10px"}
+            >
+              <Button
+                gap="5px"
+                className="project-github-link"
+                onClick={() =>
+                  handleclick("https://github.com/mdjawedh022/KFC-23")
+                }
+              >
+                Repo <AiOutlineGithub />
+              </Button>
+              <Button
+                gap="5px"
+                className="project-deployed-link"
+                onClick={() => handleclick("https://kfc-clone-23.netlify.app/")}
+              >
+                Live <BsBoxArrowUpRight />
+              </Button>
+            </Box>
+          </Box>
           {/* ------------------- */}
           <Box
             className="project-card"
@@ -286,79 +354,6 @@ const Project = () => {
             </Box>
           </Box>
           {/* ------------------------------------------------------ */}
-          <Box
-            className="project-card"
-            bg={useColorModeValue("blue.800", "blue.800")}
-            boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
-            p={"10px"}
-            borderRadius={"10px"}
-          >
-            <Image borderRadius={"10px"} src={img1} alt="pro1" />
-            <Text
-              className="project-title"
-              color={useColorModeValue("white", "")}
-              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
-            >
-              J.Crew
-            </Text>
-            <Text
-              color={useColorModeValue("white", "")}
-              className="project-description"
-            >
-              In this project we have tried to manipulate dom elements, styling
-              using css and tried to make a dynamic and responsive website. we
-              were able to clone more or less the whole website with same
-              looking and features.{" "}
-            </Text>
-            <hr />
-            <Text
-              color={useColorModeValue("white", "")}
-              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
-            >
-              Tech Stack
-            </Text>
-            <Center>
-              <Box
-                className="project-tech-stack"
-                display={"flex"}
-                alignItems={"center"}
-                gap={"5px"}
-                mb={"5px"}
-                fontSize={"30px"}
-              >
-                <FaReact color="white" />
-                <FaCss3Alt color="white" /> <SiChakraui color="white" />{" "}
-              </Box>
-            </Center>
-            <hr />
-            <Box
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"space-around"}
-              mt={"10px"}
-            >
-              <Button
-                gap="5px"
-                className="project-github-link"
-                onClick={() =>
-                  handleclick(
-                    "https://github.com/mdjawedh022/-hellish-cough-3444"
-                  )
-                }
-              >
-                Repo <AiOutlineGithub />
-              </Button>
-              <Button
-                gap="5px"
-                className="project-deployed-link"
-                onClick={() =>
-                  handleclick("https://playful-melomakarona-1f7b4f.netlify.app")
-                }
-              >
-                Live <BsBoxArrowUpRight />
-              </Button>
-            </Box>
-          </Box>
         </Box>
         {/* <Button>more Projects -></Button> */}
       </Box>
