@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.416f456f.css",
-    "main.js": "/static/js/main.8162990b.js",
+    "main.js": "/static/js/main.211fdb6f.js",
     "static/media/kfc.png": "/static/media/kfc.83a6864839a1c8b7455d.png",
     "static/media/1.png": "/static/media/1.1fa2bdb741d1c3a953e6.png",
     "static/media/amazon.png": "/static/media/amazon.4ce7d1a0411068db88cf.png",
@@ -11,10 +11,10 @@
     "static/media/logoMj.png": "/static/media/logoMj.e5b59fefa10d8ff8d2f7.png",
     "index.html": "/index.html",
     "main.416f456f.css.map": "/static/css/main.416f456f.css.map",
-    "main.8162990b.js.map": "/static/js/main.8162990b.js.map"
+    "main.211fdb6f.js.map": "/static/js/main.211fdb6f.js.map"
   },
   "entrypoints": [
     "static/css/main.416f456f.css",
-    "static/js/main.8162990b.js"
+    "static/js/main.211fdb6f.js"
   ]
 }
