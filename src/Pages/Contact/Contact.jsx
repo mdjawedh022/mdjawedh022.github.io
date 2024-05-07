@@ -1,5 +1,4 @@
 import React from "react";
-import "./contact.css";
 import {
   Box,
   Text,
@@ -21,19 +20,45 @@ import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
   const { hasCopied, onCopy } = useClipboard("jawedhilmand022@gmail.com");
-  const { hasCopy, onCopyMo } = useClipboard("+91 827176683");
-  const [state, handleSubmit, ResetFunction] = useForm("mzbqrgzo");
+  const { hasCopiedPhone, onCopyPhone } = useClipboard("+91 8271766683");
+  const [state, handleSubmit] = useForm("mzbqrgzo");
   const toast = useToast();
-  if (state.succeeded) {
+
+  const handleCopyEmail = () => {
+    onCopy();
     toast({
-      title: "Message Send Sucessfully",
-      description: "Your message has been sent successfully",
+      title: "Email Copied!",
       status: "success",
       duration: 2000,
       isClosable: true,
     });
-    ResetFunction();
-  }
+  };
+
+  const handleCopyPhone = () => {
+    onCopyPhone();
+    toast({
+      title: "Phone Number Copied!",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    await handleSubmit(event);
+    if (state.succeeded) {
+      toast({
+        title: "Message Sent Successfully",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+      });
+      form.reset(); 
+    }
+  };
+
   return (
     <>
       <Box
@@ -54,7 +79,6 @@ const Contact = () => {
           Feel free to reach out to me
         </Text>
         <Box
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           bg={useColorModeValue("gray.100", "blue.800")}
           borderRadius={"10px"}
           p={"20px"}
@@ -78,53 +102,40 @@ const Contact = () => {
           <Box display={"flex"} gap={"10px"}>
             <Stack>
               <Link
-                id="contact-github"
                 href="https://github.com/mdjawedh022"
-                target={"blank"}
+                target={"_blank"}
+                rel="noopener noreferrer"
               >
                 <IconButton fontSize="3xl" icon={<BsGithub />} isRound />
               </Link>
 
               <Link
-                id="contact-linkedin"
                 href="https://www.linkedin.com/in/md-jawed/"
-                target={"blank"}
+                target={"_blank"}
+                rel="noopener noreferrer"
               >
                 <IconButton fontSize="2xl" icon={<BsLinkedin />} isRound />
               </Link>
 
-              <Text id="contact-email" label="jawedhilmand022@gmail.com">
-                {" "}
-                <Tooltip
-                  label={hasCopied ? "Email Copied!" : "Copy Email"}
-                  closeOnClick={false}
-                  hasArrow
-                >
-                  <IconButton
-                    fontSize="3xl"
-                    icon={<MdEmail />}
-                    onClick={onCopy}
-                    isRound
-                  />
-                </Tooltip>
-              </Text>
-              <Text id="contact-phone" label="+91 8271766683">
-                <Tooltip
-                  label={hasCopy ? "Mobile no Copied!" : "+91 8271766683"}
-                  closeOnClick={false}
-                  hasArrow
-                >
-                  <IconButton
-                    //  id="contact-phone"
-                    fontSize="3xl"
-                    icon={<MdPhone />}
-                    onClick={onCopyMo}
-                    isRound
-                  />
-                </Tooltip>
-              </Text>
+              <Tooltip label={hasCopied ? "Email Copied!" : "Copy Email"}>
+                <IconButton
+                  fontSize="3xl"
+                  icon={<MdEmail />}
+                  onClick={handleCopyEmail}
+                  isRound
+                />
+              </Tooltip>
+
+              <Tooltip label={hasCopiedPhone ? "Phone Copied!" : "Copy Phone"}>
+                <IconButton
+                  fontSize="3xl"
+                  icon={<MdPhone />}
+                  onClick={handleCopyPhone}
+                  isRound
+                />
+              </Tooltip>
             </Stack>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleFormSubmit}>
               <Stack
                 spacing={3}
                 w={{ base: "100%", md: "95%", lg: "125%" }}
@@ -148,12 +159,12 @@ const Contact = () => {
                   errors={state.errors}
                 />
                 <Input
-                  _hover={{ border: "1px solid blue.500" }}
                   placeholder="Email.."
                   type="email"
                   name="email"
                   borderColor={"gray.800"}
                   id="email"
+                  _hover={{ border: "1px solid blue.500" }}
                 />
                 <ValidationError
                   prefix="Email"
@@ -161,12 +172,12 @@ const Contact = () => {
                   errors={state.errors}
                 />
                 <Textarea
-                  _hover={{ border: "1px solid blue.500" }}
                   placeholder="Messages.."
                   height={"120px"}
                   border={"1px solid black"}
                   name="message"
                   id="message"
+                  _hover={{ border: "1px solid blue.500" }}
                 />
                 <ValidationError
                   prefix="Message"

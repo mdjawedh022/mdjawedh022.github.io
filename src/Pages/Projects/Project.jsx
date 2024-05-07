@@ -15,7 +15,7 @@ import {SiChakraui, SiRedux,SiMongodb,SiExpress} from "react-icons/si"
 import {FaCss3Alt, FaNodeJs, FaReact} from "react-icons/fa"
 import img from "../../images/1.png";
 import img1 from "../../images/kfc.png";
-import img4 from "../../images/amazon.png"
+import img4 from "../../images/admin-dynamic.png"
 import img3 from "../../images/wishkart-photo.png"
 import "./project.css";
 
@@ -88,7 +88,11 @@ const Project = () => {
                 fontSize={"30px"}
               >
                 <FaReact color="white" />
-                <FaCss3Alt color="white" /> <SiChakraui color="white" />{" "}
+                <SiRedux color="white" />
+                <FaCss3Alt color="white" />
+                <SiMongodb color="white" />
+                <FaNodeJs color="white" />
+                <SiExpress color="white" />
               </Box>
             </Center>
             <hr />
@@ -117,6 +121,92 @@ const Project = () => {
             </Box>
           </Box>
           {/* ------------------- */}
+          <Box
+            className="project-card"
+            bg={useColorModeValue("blue.800", "blue.800")}
+            boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
+            p={"10px"}
+            borderRadius={"10px"}
+          >
+            <Image
+              borderRadius={"10px"}
+              src={img4}
+              alt="pro1"
+              h={"205px"}
+              w={"100%"}
+            />
+            <Text
+              className="project-title"
+              color={useColorModeValue("white", "")}
+              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
+            >
+              Admin-Dynamic-ui
+            </Text>
+            <Text
+              color={useColorModeValue("white", "")}
+              className="project-description"
+            >
+              Admin Dynamic UI Dashboard React is built with over 80 frontend
+              individual elements, like buttons, inputs, navbars, navtabs, cards
+              or alerts, configurator, tooltip giving you the freedom of
+              choosing and combining. All components can take variations in
+              colour, that you can easily modify using props.
+            </Text>
+            <br />
+
+            <hr />
+            <Text
+              color={useColorModeValue("white", "")}
+              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
+            >
+              Tech Stack
+            </Text>
+            <Center>
+              <Box
+                className="project-tech-stack"
+                display={"flex"}
+                alignItems={"center"}
+                gap={"5px"}
+                mb={"10px"}
+                fontSize={"30px"}
+              >
+                <FaReact color="white" />
+                <SiRedux color="white" />
+                <FaCss3Alt color="white" />
+                <SiChakraui color="white" />
+                <SiMongodb color="white" />
+                <FaNodeJs color="white" />
+                <SiExpress color="white" />
+              </Box>
+            </Center>
+            <hr />
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"space-around"}
+              mt={"10px"}
+            >
+              <Button
+                gap="5px"
+                className="project-github-link"
+                onClick={() =>
+                  handleclick("https://github.com/mdjawedh022/admin-dynamic-ui")
+                }
+              >
+                Repo <AiOutlineGithub />
+              </Button>
+              <Button
+                gap="5px"
+                className="project-deployed-link"
+                onClick={() =>
+                  handleclick("https://admin-dynamic-ui.netlify.app/")
+                }
+              >
+                Live <BsBoxArrowUpRight />
+              </Button>
+            </Box>
+          </Box>
+          {/* -------------------------------------- */}
           <Box
             className="project-card"
             bg={useColorModeValue("blue.800", "blue.800")}
@@ -187,14 +277,18 @@ const Project = () => {
               <Button
                 gap="5px"
                 className="project-deployed-link"
-                onClick={() => handleclick("https://wish-kart.vercel.app/")}
+                onClick={() =>
+                  handleclick(
+                    "https://wishkart-social-commerce-enterprise.vercel.app/"
+                  )
+                }
               >
                 Live <BsBoxArrowUpRight />
               </Button>
             </Box>
           </Box>
           {/* ------------------- */}
-          <Box
+          {/* <Box
             className="project-card"
             bg={useColorModeValue("blue.800", "blue.800")}
             boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
@@ -276,7 +370,9 @@ const Project = () => {
                 Live <BsBoxArrowUpRight />
               </Button>
             </Box>
-          </Box>
+          </Box> */}
+
+          {/* ------------------------------ */}
           <Box
             className="project-card"
             data-aos="fade-up"
